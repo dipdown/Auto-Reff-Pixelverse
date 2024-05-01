@@ -1,10 +1,10 @@
-# BotPXLVER
+# PixelVerse Bot
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/gvoze32/botpxlver.git`
-2. Navigate to the project directory: `cd botpxlver`
-3. Install node dependencies: `npm i`
-4. Install py dependencies (optional): `pip install requests beautifulsoup4`
+1. Clone Repo: `git clone https://github.com/dipdown/pxlverse-v2.git`
+2. Move Directory: `cd pxlverse-v2`
+3. Install Node Dependencies: `npm install`
+4. Install py Dependencies (optional): `pip install requests beautifulsoup4`
 
 ## Usage
 V1
@@ -15,7 +15,6 @@ V2
 1. Run the script: `node indexv2.js`
 
 Follow the prompts to input the referral code, and the number of referrals you want to generate.
-
 The script will then proceed to register users with randomly generated email addresses and refer them using the provided referral code.
 
 ## Additional Notes
