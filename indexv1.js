@@ -85,7 +85,7 @@ const headers = {
             headers.Authorization = accessToken.tokens.access;
 
             const referralResponse = await axios.put(referralURL, referralPayload, { headers });
-            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Sukses reff ke ${i}\n`);
+            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Sukses reff kontol ke ${i}\n`);
         } catch (error) {
             console.error('[Error]:', error);
         }
