@@ -69,23 +69,23 @@ const headers = {
     async function registerUser(email, domain, otpPayload, referralPayload, i) {
         try {
             const otpResponse = await makeRequest(otpRequestURL, otpPayload);
-            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Mencoba mendaftar menggunakan email => ${email}`);
+            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Mencoba Mendaftar Menggunakan Email => ${email}`);
 
             let otp;
             let startTime = new Date().getTime();
             do {
                 otp = await functionGetLink(email.split('@')[0], domain);
-                console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Menunggu kode verifikasi...`);
+                console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Menunggu Kode Verifikasi...`);
             } while (!otp && (new Date().getTime() - startTime) < 30000);
-            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Kode verifikasi: ${otp}`);
+            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Kode Verifikasi: ${otp}`);
 
             const accessToken = await makeRequest(otpVerificationURL, { email, otpCode: otp });
-            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Verifikasi kode sukses...`);
+            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Verifikasi Email Sukses...`);
 
             headers.Authorization = accessToken.tokens.access;
 
             const referralResponse = await axios.put(referralURL, referralPayload, { headers });
-            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Sukses reff kontol ke ${i}\n`);
+            console.log(`[ ${moment().format("HH:mm:ss")} ] ` + `Sukses Reff Ke-${i}\n`);
         } catch (error) {
             console.error('[Error]:', error);
         }
